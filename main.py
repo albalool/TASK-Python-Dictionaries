@@ -10,7 +10,7 @@ person = {
 
 def change_age(person, number):
     person["age"] = number
-    return person["age"]
+    return person
 
 print(change_age(person, 21))
 
@@ -20,7 +20,7 @@ print(change_age(person, 21))
 
 def add_hobby(person, hobby):
     person["hobbies"].append(hobby)
-    return person["hobbies"]
+    return person
 
 
 print(add_hobby(person, "Table Tennis"))
@@ -32,11 +32,30 @@ print(add_hobby(person, "Table Tennis"))
 
 
 def add_job(person, job):
-    ...
-
+    if job in person:
+        return False
+    else:
+        person["job"] = job
+    return person
+    
+print(add_job(person, "programmer"))
 
 # 2. Create a function called `check_hobbies`, which takes a person dictionary as an argument. This function checks the number of hobbies for this person, if it's more than three hobbies, print to the user a message telling them that they're talented.
 
 
 def check_hobbies(person):
-    ...
+    i = len(person["hobbies"])
+    if i > 3:
+        massage = "You are talented!"
+        return massage
+    
+
+print(check_hobbies(person))
+   
+    # counter = 0
+    # for i in person["hobbies"]:
+    #     counter = counter + 1
+    # if counter > 3:
+    #     return print("You are talented!")
+    # return person
+    
